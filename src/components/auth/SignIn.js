@@ -7,6 +7,7 @@ import { ValidationForm, TextInput, TextInputGroup } from 'react-bootstrap4-form
 import validator from 'validator';
 import { FaEye } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
+import { DebounceInput } from 'react-debounce-input';
 
 class SignIn extends Component {
   state = {
@@ -40,7 +41,9 @@ class SignIn extends Component {
           <ValidationForm onSubmit={this.handleSubmit}>
             <div className="form-group">
                 <label className="lebel" htmlFor="email">Email</label>
-                <TextInput name="email"
+                <DebounceInput element={TextInput}
+                    debounceTimeout={500}
+                    name="email"
                     id="email"
                     type="email"
                     validator={validator.isEmail}
@@ -51,7 +54,9 @@ class SignIn extends Component {
             </div>
             <div className="form-group">
                 <label className="lebel" htmlFor="password">Password</label>
-                <TextInputGroup name="password"
+                <DebounceInput element={TextInputGroup}
+                    debounceTimeout={500}
+                    name="password"
                     id="password"
                     type={this.state.type}
                     required

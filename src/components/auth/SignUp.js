@@ -7,6 +7,7 @@ import { ValidationForm, TextInput, TextInputGroup } from 'react-bootstrap4-form
 import validator from 'validator';
 import { FaEye } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
+import { DebounceInput } from 'react-debounce-input';
 
 class SignUp extends Component {
   state = {
@@ -41,7 +42,9 @@ class SignUp extends Component {
          <ValidationForm onSubmit={this.handleSubmit}>
            <div className="form-group">
                <label className="lebel" htmlFor="email">Email</label>
-               <TextInput name="email"
+               <DebounceInput element={TextInput}
+                   debounceTimeout={500}
+                   name="email"
                    id="email"
                    type="email"
                    validator={validator.isEmail}
@@ -52,7 +55,9 @@ class SignUp extends Component {
            </div>
            <div className="form-group">
                <label className="lebel" htmlFor="password">Password</label>
-               <TextInputGroup name="password"
+               <DebounceInput element={TextInputGroup}
+                   debounceTimeout={500}
+                   name="password"
                    id="password"
                    type={this.state.type}
                    required
@@ -69,7 +74,9 @@ class SignUp extends Component {
 
            <div className="form-group">
                <label className="lebel" htmlFor="firstName">First Name</label>
-               <TextInputGroup name="firstName"
+               <DebounceInput element={TextInputGroup}
+                   debounceTimeout={500}
+                   name="firstName"
                    id="firstName"
                    type="text"
                    required
@@ -85,7 +92,9 @@ class SignUp extends Component {
 
            <div className="form-group">
                <label className="lebel" htmlFor="lastName">Last Name</label>
-               <TextInputGroup name="lastName"
+               <DebounceInput element={TextInputGroup}
+                   debounceTimeout={500}
+                   name="lastName"
                    id="lastName"
                    type="text"
                    required
