@@ -35,6 +35,11 @@ $errorText-color: red;
     grid-template-rows: 0.4fr 0.3fr 1.5fr;
 }
 
+.formForgotPassword {
+    @extend .formSignUp;
+    grid-template-rows: 0.4fr 0.3fr 1.5fr;
+}
+
 .logo {
     grid-area: logo;
     align-self: center;

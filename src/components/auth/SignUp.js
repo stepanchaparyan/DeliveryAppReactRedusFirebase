@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
 import './auth.scss'
@@ -104,7 +104,6 @@ class SignUp extends Component {
            <div className="form-group" id="btn">
                <button className="btn btn-success btn-lg btn-block">Submit</button>
            </div>
-           <Link className="forgotPassword" to="/ForgotPassword">Forgot password?</Link>
        </ValidationForm>
        </div>
      </div>  

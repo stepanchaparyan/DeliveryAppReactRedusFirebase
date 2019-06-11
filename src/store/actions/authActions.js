@@ -10,7 +10,19 @@ export const signIn = (credentials) => {
     }).catch((err) => {
       dispatch({ type: 'LOGIN_ERROR', err });
     });
+  }
+}
 
+export const resetPassword = (email) => {
+  return (dispatch, getState, {getFirebase}) => {
+    const firebase = getFirebase();
+    
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(() => {
+      dispatch({ type: 'RESET_PASSWORD' });
+    }).catch((err) => {
+      dispatch({ type: 'RESET_PASSWORD_ERROR', err });
+    });
   }
 }
 

@@ -36,7 +36,7 @@ class SignIn extends Component {
           <div className="logo">
             <img src={logo} alt="Logo" />
           </div>
-          <div className="title">Sign In</div>
+          <div className="title">LogIn</div>
           <ValidationForm onSubmit={this.handleSubmit}>
             <div className="form-group">
                 <label className="lebel" htmlFor="email">Email</label>
@@ -71,7 +71,7 @@ class SignIn extends Component {
             <div className="form-group" id="btn">
                 <button className="btn btn-success btn-lg btn-block">Submit</button>
             </div>
-            <Link className="forgotPassword" to="/ForgotPassword">Forgot password?</Link>
+            <Link className="forgotPassword" to="/forgotPassword">Forgot password?</Link>
         </ValidationForm>
         </div>
       </div>  
