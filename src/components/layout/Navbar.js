@@ -4,24 +4,26 @@ import SignedOutLinks from './SignedOutLinks'
 import { connect } from 'react-redux'
 import { Container, Navbar, NavbarBrand } from 'reactstrap';
 import './navbar.scss';
+import { FaTruck } from 'react-icons/fa';
 
 const MyNavbar = (props) => {
   const { auth, profile } = props;
-  // console.log(auth);
   const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
 
   return (
     <Navbar className="p-2 bg-info text-white" light expand="md">
       <Container>
-      <NavbarBrand href="/">Deliver App</NavbarBrand>
-        {links}
+      <div className="iconAndTitle">
+          <div className="FaTruck"> <FaTruck /></div>
+          <NavbarBrand href="/">Deliver App</NavbarBrand>
+      </div>
+      {links}
       </Container>
     </Navbar>
   )
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
   return{
     auth: state.firebase.auth,
     profile: state.firebase.profile

@@ -13,6 +13,7 @@ const Notifications = (props) => {
                 return <ListGroupItem className="notifications" key={item.id}>
                   <span className="userName">{item.user} </span>
                   <span className="content">{item.content} </span>
+                  <span className="shopName">{item.shop} </span>
                   <span className="date">{moment(item.time.toDate()).fromNow()}</span>
                 </ListGroupItem>
               })}

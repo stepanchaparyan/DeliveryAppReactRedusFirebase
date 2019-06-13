@@ -1,40 +1,50 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Table } from 'reactstrap';
+import './shopList.scss';
+import { connect } from 'react-redux'
+import { deleteShop } from '../../store/actions/shopActions'
 
-const ProjectList = ({shops}) => {
-  return (
-    <div className="project-list section">
-          <Table striped>
-              <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>City</th>
-                    <th>Address</th>
-                </tr>
-              </thead>
-              <tbody> 
-                { shops && shops.map((shop, i) => {
-                    return ( 
-                      <tr key={i}>
-                        <th scope="row">{i+1}</th>
-                        <th>
-                        <Link to={'/shop/' + shop.id}>
-                            {shop.name}
-                        </Link>
-                        </th>
-                        <td>{shop.city}</td>
-                        <td>{shop.address}</td>
-                      </tr>
-                    )
-                  }
-                  )
-                }                  
-              </tbody>
-          </Table>
-    </div>
-  )
+class ShopList extends Component {
+  render () {
+    const { shops } = this.props;
+    return (
+        <Table striped>
+          <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Address</th>
+            </tr>
+          </thead>
+          <tbody> 
+            { shops && shops.map((shop, i) => {
+                return ( 
+                  <tr key={i}>
+                    <th scope="row">{i+1}</th>
+                    <th>
+                    <Link to={'/shop/' + shop.id}>
+                        {shop.name}
+                    </Link>
+                    </th>
+                    <td>{shop.city}</td>
+                    <td>{shop.address}</td>
+                    <td id="x" onClick={() => this.props.deleteShop(shop.id)}>x</td>
+                  </tr>
+                )
+              }
+            )}                  
+          </tbody>
+      </Table>
+    )
+  }
 }
 
-export default ProjectList
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteShop: (id) => dispatch(deleteShop(id))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(ShopList)

@@ -4,18 +4,19 @@ $title-color: #1a8596;
 .notifications {
     background-color: #DFDFDF;
 }
-
 .userName {
     color: $text-color;
     font-weight: bold;
     margin-right: 20px;
 }
-
+.shopName {
+    @extend .userName;
+    color: $title-color;
+}
 .content {
     color: $text-color;
     margin-right: 20px;
 }
-
 .notificationTitle {
     color: $title-color;
     font-weight: bold;
