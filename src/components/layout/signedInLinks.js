@@ -2,20 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authActions'
-import { Nav, NavItem } from 'reactstrap';
+import { Nav, NavItem  } from 'reactstrap';
 import './navbar.scss';
 
-const SignedInLinks = (props) => {
+ const SignedInLinks = (props) => {
   return (
     <div>
       <Nav pills>
-        <NavItem>
-            <NavLink to='/addShop/' className="text-white nav-text">Add Shop</NavLink>
-        </NavItem>
+        <NavLink exact to='/shops' className="text-white nav-text">Shops</NavLink>
+        <NavLink exact to='/products' className="text-white nav-text">Products</NavLink>
         <NavItem onClick={props.signOut} className="text-white nav-text">Sign Out</NavItem>
-        <NavLink to='/' className="text-white nav-text profileName">
-          {props.profile.firstName}
-        </NavLink>
+        <NavLink exact to='/' className="text-white nav-text profileName">{props.profile.firstName}</NavLink>
       </Nav>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
-import SignedInLinks from './SignedInLinks'
-import SignedOutLinks from './SignedOutLinks'
+import SignedInLinks from './signedInLinks'
+import SignedOutLinks from './signedOutLinks'
 import { connect } from 'react-redux'
 import { Container, Navbar, NavbarBrand } from 'reactstrap';
 import './navbar.scss';

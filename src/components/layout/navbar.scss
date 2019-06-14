@@ -5,27 +5,23 @@
     font-weight: bold;
     cursor: pointer;
 }
-
 .nav-text:hover {
     color: black !important;
 }
-
 .profileName {
-    font-size: 19px;
     color: black !important;
     margin-left: 40px;
-}
-
-.nav-item {
+}.nav-item {
     margin: auto;
 }
-
 .FaTruck {
    font-size: 27px;
    margin-right: 25%;
 }
-
 .iconAndTitle {
     display: flex;
     margin-right: auto;
+}
+.nav-item {
+    margin: 0;
 }

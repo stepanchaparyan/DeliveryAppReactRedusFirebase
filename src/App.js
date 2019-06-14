@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Dashboard from './components/dashboard/Dashboard';
-import ShopDetails from './components/shops/ShopDetails';
-import SignIn from './components/auth/SignIn';
-import SignUp from './components/auth/SignUp';
+import Navbar from './components/layout/navbar';
+import Dashboard from './components/dashboard/dashboard';
+import ShopDetails from './components/shops/shopDetails';
+import SignIn from './components/auth/signIn';
+import SignUp from './components/auth/signUp';
 import ForgotPassword from './components/auth/forgotPassword';
-import AddShop from './components/shops/AddShop';
+import Shops from './components/dashboard/shops';
 
 class App extends Component {
   render() {
@@ -20,7 +20,7 @@ class App extends Component {
             <Route path='/signin' component={SignIn} />
             <Route path='/signup' component={SignUp} />
             <Route path='/forgotPassword' component={ForgotPassword} />
-            <Route path='/addShop' component={AddShop} />
+            <Route path='/shops' component={Shops} />
           </Switch>
         </div>
       </BrowserRouter>
