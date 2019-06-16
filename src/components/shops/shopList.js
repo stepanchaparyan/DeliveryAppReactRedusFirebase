@@ -23,10 +23,9 @@ class ShopList extends Component {
                 return ( 
                   <tr key={i}>
                     <th scope="row">{i+1}</th>
-                    <th>
-                    <Link to={'/shop/' + shop.id}>
-                        {shop.name}
-                    </Link>
+                    <th>       
+                    {/* <Link to={'/shop/' + shop.id}>{shop.name}</Link> */}
+                    <a href={'/shop/' + shop.id}>{shop.name}</a>
                     </th>
                     <td>{shop.city}</td>
                     <td>{shop.address}</td>

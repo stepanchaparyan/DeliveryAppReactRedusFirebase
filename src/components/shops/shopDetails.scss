@@ -25,9 +25,6 @@
     padding: 0 0 0 1%;
     white-space: nowrap;
 }
-#inp  {
-    flex-grow: 2 !important;
-}
 #btn {
     max-height: 32px;
     text-align: center;
@@ -38,8 +35,5 @@
 @media screen and (max-width: 1000px) {
     .group-row {
        margin: 1%;  
-    }
-    #inp {
-       flex-grow: 1 !important;
     }
   }

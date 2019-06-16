@@ -9,6 +9,13 @@ const shopReducer = (state = initState, action) => {
       console.log('add_shop error');
       return state;
 
+    case 'UPDATE_SHOP_SUCCESS':
+      console.log('update_shop success');
+      return state;
+    case 'UPDATE_SHOP_ERROR':
+      console.log('update_shop error');
+      return state;
+
     case 'DELETE_SHOP_SUCCESS':
       console.log('delete_shop success');
       return state;

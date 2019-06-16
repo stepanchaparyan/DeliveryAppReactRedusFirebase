@@ -17,25 +17,41 @@ export const addShop = (shop) => {
   }
 };
 
-export const updateShop = (shop, uid) => {
+export const updateShopName = (shopName, shopId) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
-    const profile = getState().firebase.profile;
-    const authorId = getState().firebase.auth.uid;
-    let { name, city, address } = shop;
-    firestore.collection('shops').doc(uid).set({
-      //...shop, 
-      name: name,
-      city: 'newCity3',
-      address: address,  
-      authorFirstName: profile.firstName,
-      authorLastName: profile.lastName,
-      authorId: authorId,
-      createdAt: new Date()
+    firestore.collection('shops').doc(shopId).update({
+      name: shopName  
     }).then(() => {
-      dispatch({ type: 'ADD_SHOP_SUCCESS' });
+      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
     }).catch(err => {
-      dispatch({ type: 'ADD_SHOP_ERROR' }, err);
+      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
+    });
+  }
+};
+
+export const updateShopCity = (shopCity, shopId) => {
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+    firestore.collection('shops').doc(shopId).update({
+      city: shopCity
+    }).then(() => {
+      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
+    }).catch(err => {
+      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
+    });
+  }
+};
+
+export const updateShopAddress = (shopAddress, shopId) => {
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+    firestore.collection('shops').doc(shopId).update({
+      address: shopAddress  
+    }).then(() => {
+      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
+    }).catch(err => {
+      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
     });
   }
 };
