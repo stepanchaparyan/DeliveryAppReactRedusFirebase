@@ -9,7 +9,6 @@ import { FaTruck } from 'react-icons/fa';
 const MyNavbar = (props) => {
 const { auth, profile } = props;
 const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
-
   return (
     <Navbar className="p-2 bg-info text-white" light expand="md">
       <Container>

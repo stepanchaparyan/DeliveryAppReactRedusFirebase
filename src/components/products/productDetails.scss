@@ -1,0 +1,39 @@
+.detailsTitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 1%;
+}
+.input {
+    margin: 1% 2%;
+    padding: 0 1%;
+    height: 33px;
+}
+.text {
+    color: black;
+    font-size: 18px;
+    margin-left: 5%;
+}
+.group-row {
+    background-color: lightgray;
+    margin: 0.5% 10%; 
+    display: flex;
+}
+.col {
+    text-align: start;
+    margin: 1%;
+    padding: 0 0 0 1%;
+    white-space: nowrap;
+}
+#btn {
+    max-height: 32px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+    .group-row {
+       margin: 1%;  
+    }
+  }

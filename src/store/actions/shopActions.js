@@ -47,9 +47,9 @@ export const updateShopAddress = (shopAddress, shopId) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
     firestore.collection('shops').doc(shopId).update({
-      address: shopAddress  
+      address: shopAddress
     }).then(() => {
-      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
+      dispatch({ type: 'UPDATE_SHOP_SUCCESS',  });
     }).catch(err => {
       dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
     });

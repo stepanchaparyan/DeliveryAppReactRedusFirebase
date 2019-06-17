@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { firestoreConnect } from 'react-redux-firebase';
-import { compose } from 'redux';
 import { Button, Input } from 'reactstrap';
 import moment from 'moment';
 import './shopDetails.scss';
@@ -28,6 +26,7 @@ class ShopDetails extends Component {
         name: ''
     });
   }
+
   updateShopCity = (e) => {
     e.preventDefault();
     const { shopId } = this.props;
@@ -36,6 +35,7 @@ class ShopDetails extends Component {
         city: ''
     });
   }
+
   updateShopAddress = (e) => {
     e.preventDefault();
     const { shopId } = this.props;
@@ -46,6 +46,7 @@ class ShopDetails extends Component {
   }
   render () {
   const { auth, shop } = this.props;
+  console.log('Details - props ', this.props);
   if (!auth.uid) return <Redirect to='/signin' /> 
   if (shop) {
       return (
@@ -94,6 +95,7 @@ class ShopDetails extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log('mapstate', state);
   const id = ownProps.match.params.id;
   const shops = state.firestore.data.shops;
   const shop = shops ? shops[id] : null
@@ -105,6 +107,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
+  console.log('mapdispatch',);
   return {
     updateShopName: (shopName, shopId) => dispatch(updateShopName(shopName, shopId)),
     updateShopCity: (shopCity, shopId) => dispatch(updateShopCity(shopCity, shopId)),
@@ -112,10 +115,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
-  firestoreConnect([{
-    collection: 'shops'
-  }])
-)(ShopDetails)
-
+export default connect(mapStateToProps, mapDispatchToProps)(ShopDetails)

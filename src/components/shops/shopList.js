@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Table } from 'reactstrap';
 import './shopList.scss';
 import { connect } from 'react-redux'
 import { deleteShop } from '../../store/actions/shopActions'
 
 class ShopList extends Component {
+
   render () {
     const { shops } = this.props;
+    //console.log('shopList ', shops);
     return (
         <Table striped>
           <thead>
@@ -23,9 +25,8 @@ class ShopList extends Component {
                 return ( 
                   <tr key={i}>
                     <th scope="row">{i+1}</th>
-                    <th>       
-                    {/* <Link to={'/shop/' + shop.id}>{shop.name}</Link> */}
-                    <a href={'/shop/' + shop.id}>{shop.name}</a>
+                    <th>
+                    <NavLink exact to={'/shop/' + shop.id}>{shop.name}</NavLink>
                     </th>
                     <td>{shop.city}</td>
                     <td>{shop.address}</td>
@@ -40,10 +41,18 @@ class ShopList extends Component {
   }
 }
 
+
 const mapDispatchToProps = dispatch => {
   return {
     deleteShop: (id) => dispatch(deleteShop(id))
   }
 }
 
-export default connect(null, mapDispatchToProps)(ShopList)
+// const mapStateToProps = (state) => {
+//   console.log('state_in_List', state);
+//   return {
+//     shops: state.firestore.ordered.shops
+//   }
+// }
+
+ export default connect(null, mapDispatchToProps)(ShopList)
