@@ -1,4 +1,4 @@
-export const addShop = (shop) => {
+export const addShop2 = (shop) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
@@ -14,6 +14,24 @@ export const addShop = (shop) => {
     }).catch(err => {
       dispatch({ type: 'ADD_SHOP_ERROR' }, err);
     });
+  }
+};
+
+export const addShop = (shop) => {
+  return (dispatch) => {
+      dispatch({ type: 'ADD_SHOP_SUCCESS', data: shop });
+  }
+};
+
+export const getShops = () => {
+  return (dispatch, getState) => {
+    const shops = getState().firestore.ordered.shops;
+    console.log('getState ', getState());
+    console.log('getSateFirestore.data.shops ', shops);
+    //firestore.collection('shops').add({})
+    //.then(() => {
+      dispatch({ type: 'GET_SHOPS_SUCCESS', data: shops });
+    //});
   }
 };
 
