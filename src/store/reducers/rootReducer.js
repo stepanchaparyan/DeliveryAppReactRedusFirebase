@@ -8,7 +8,7 @@ import { firebaseReducer } from 'react-redux-firebase';
 const rootReducer = combineReducers({
   auth: authReducer,
   shopReducer: shopReducer,
-  products: productReducer,
+  productReducer: productReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer
 });

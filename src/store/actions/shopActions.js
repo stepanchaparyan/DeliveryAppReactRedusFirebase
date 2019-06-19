@@ -1,4 +1,4 @@
-export const addShop2 = (shop) => {
+export const addShop = (shop) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
     const profile = getState().firebase.profile;
@@ -17,23 +17,23 @@ export const addShop2 = (shop) => {
   }
 };
 
-export const addShop = (shop) => {
-  return (dispatch) => {
-      dispatch({ type: 'ADD_SHOP_SUCCESS', data: shop });
-  }
-};
+// export const addShop = (shop) => {
+//   return (dispatch) => {
+//       dispatch({ type: 'ADD_SHOP_SUCCESS', data: shop });
+//   }
+// };
 
-export const getShops = () => {
-  return (dispatch, getState) => {
-    const shops = getState().firestore.ordered.shops;
-    console.log('getState ', getState());
-    console.log('getSateFirestore.data.shops ', shops);
-    //firestore.collection('shops').add({})
-    //.then(() => {
-      dispatch({ type: 'GET_SHOPS_SUCCESS', data: shops });
-    //});
-  }
-};
+// export const getShops = () => {
+//   return (dispatch, getState) => {
+//     const shops = getState().firestore.ordered.shops;
+//     console.log('getState ', getState());
+//     console.log('getSateFirestore.data.shops ', shops);
+//     //firestore.collection('shops').add({})
+//     //.then(() => {
+//       dispatch({ type: 'GET_SHOPS_SUCCESS', data: shops });
+//     //});
+//   }
+// };
 
 export const updateShopName = (shopName, shopId) => {
   return (dispatch, getState, {getFirestore}) => {

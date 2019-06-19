@@ -27,6 +27,7 @@ class ShopList extends Component {
                     <th scope="row">{i+1}</th>
                     <th>
                     <NavLink exact to={'/shop/' + shop.id}>{shop.name}</NavLink>
+                    {/* <a href={'/shop/' + shop.id}>{shop.name}</a> */}
                     </th>
                     <td>{shop.city}</td>
                     <td>{shop.address}</td>

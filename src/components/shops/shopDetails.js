@@ -95,7 +95,6 @@ class ShopDetails extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('mapstate', state);
   const id = ownProps.match.params.id;
   const shops = state.firestore.data.shops;
   const shop = shops ? shops[id] : null
@@ -107,7 +106,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => {
-  console.log('mapdispatch',);
   return {
     updateShopName: (shopName, shopId) => dispatch(updateShopName(shopName, shopId)),
     updateShopCity: (shopCity, shopId) => dispatch(updateShopCity(shopCity, shopId)),

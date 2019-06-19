@@ -10,12 +10,6 @@ import AddShop from '../shops/addShop';
 import { getShops } from '../../store/actions/shopActions'
 
 class Shops extends Component {
-  componentWillUpdate() {
-    console.log('done1');
-    this.props.getShops();
-    console.log('done2');
-  }
- 
   render() {
     const { shops, auth, notifications } = this.props;
     console.log('rnd_this.props ', this.props);
@@ -33,23 +27,15 @@ class Shops extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state ', state);
   return {
-    shops: state.shopReducer.shops,
+    shops: state.firestore.ordered.shops,
     auth: state.firebase.auth,
     notifications: state.firestore.ordered.notifications
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getShops: () => dispatch(getShops())
-  }
-}
-
-
 export default compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(mapStateToProps),
   firestoreConnect([
     { collection: 'shops', orderBy: [ 'name', 'asc' ] },
     { collection: 'notifications', limit: 3, orderBy: [ 'time', 'desc' ] }
