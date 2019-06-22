@@ -21,7 +21,7 @@ class ShopDetails extends Component {
     e.preventDefault();
     const { shopId } = this.props;
     this.props.updateShopName(this.state.name, shopId);
-    this.props.history.push();
+    //this.props.history.push();
     this.setState({
         name: ''
     });
@@ -45,8 +45,8 @@ class ShopDetails extends Component {
     });
   }
   render () {
-  const { auth, shop } = this.props;
-  console.log('Details - props ', this.props);
+  const { auth, shop, id } = this.props;
+  //console.log('Details - props ', this.props);
   if (!auth.uid) return <Redirect to='/signin' /> 
   if (shop) {
       return (
@@ -95,7 +95,8 @@ class ShopDetails extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const id = ownProps.match.params.id;
+  //console.log('state ', ownProps)
+  const id = ownProps.id;
   const shops = state.firestore.data.shops;
   const shop = shops ? shops[id] : null
   return {

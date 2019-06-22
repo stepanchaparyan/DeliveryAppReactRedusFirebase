@@ -1,16 +1,15 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
 import { Table } from 'reactstrap';
 import './shopList.scss';
 import { connect } from 'react-redux'
 import { deleteShop } from '../../store/actions/shopActions'
+import ShopDetails from './shopDetails';
 
 class ShopList extends Component {
 
   render () {
     const { shops } = this.props;
-    //console.log('shopList ', shops);
-    return (
+    return ( 
         <Table striped>
           <thead>
             <tr>
@@ -23,37 +22,39 @@ class ShopList extends Component {
           <tbody> 
             { shops && shops.map((shop, i) => {
                 return ( 
+                  <Fragment key={i}>
                   <tr key={i}>
                     <th scope="row">{i+1}</th>
-                    <th>
-                    <NavLink exact to={'/shop/' + shop.id}>{shop.name}</NavLink>
-                    {/* <a href={'/shop/' + shop.id}>{shop.name}</a> */}
-                    </th>
+                    <td>{shop.name}</td>             
                     <td>{shop.city}</td>
                     <td>{shop.address}</td>
                     <td id="x" onClick={() => this.props.deleteShop(shop.id)}>x</td>
                   </tr>
+                  <tr>
+                    <td>
+                      <ShopDetails id={shop.id} />
+                    </td>
+                    <td>
+                      <ShopDetails id={shop.id} />
+                    </td>
+                    <td>
+                      <ShopDetails id={shop.id} />
+                    </td>
+                  </tr>
+                  </Fragment>
                 )
               }
             )}                  
           </tbody>
-      </Table>
+      </Table>        
     )
   }
 }
-
 
 const mapDispatchToProps = dispatch => {
   return {
     deleteShop: (id) => dispatch(deleteShop(id))
   }
 }
-
-// const mapStateToProps = (state) => {
-//   console.log('state_in_List', state);
-//   return {
-//     shops: state.firestore.ordered.shops
-//   }
-// }
 
  export default connect(null, mapDispatchToProps)(ShopList)
