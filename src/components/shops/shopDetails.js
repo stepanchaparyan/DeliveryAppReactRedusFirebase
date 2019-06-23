@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Input } from 'reactstrap';
-import moment from 'moment';
+//import moment from 'moment';
 import './shopDetails.scss';
 import { Redirect } from 'react-router-dom';
 import { updateShopName, updateShopCity, updateShopAddress } from '../../store/actions/shopActions'
@@ -50,39 +50,26 @@ class ShopDetails extends Component {
   if (!auth.uid) return <Redirect to='/signin' /> 
   if (shop) {
       return (
-        <>
-        <div className="detailsTitle">Full data of shop</div>
-        <div className="group-row">
-          <div className="col text">Shop creator is</div>
-          <div className="col text">{shop.authorFirstName} {shop.authorLastName}</div>
-          <div className="col"></div>
-          <div className="col" id="inp"></div>
+        <div className="detailsPage">
+          {/* <div className="group-row"> */}
+            {/* <div className="col text">Shop name</div>
+            <div className="col text">{shop.name}</div> */}
+            <Input onChange={this.handleChange} className="col input" value={this.state.name} name="name" id="name" type="text"  placeholder="type the new name to update"/>
+            <Button onClick={this.updateShopName} color="success" className="col" id="btn" size="sm">Update</Button>
+          {/* </div> */}
+          {/* <div className="group-row"> */}
+            {/* <div className="col text">Shop city</div>
+            <div className="col text">{shop.city}</div> */}
+            {/* <Input onChange={this.handleChange} className="col input" value={this.state.city} name="city" id="city" type="text" placeholder="type the new city to update"/> */}
+            {/* <Button onClick={this.updateShopCity} color="success" className="col" id="btn" size="sm">Update</Button> */}
+          {/* </div> */}
+          {/* <div className="group-row"> */}
+            {/* <div className="col text">Shop address</div>
+            <div className="col text">{shop.address}</div> */}
+            {/* <Input onChange={this.handleChange} className="col input" value={this.state.address} name="address" id="address" type="text"  placeholder="type the new address to update"/> */}
+            {/* <Button onClick={this.updateShopAddress} color="success" id="btn" className="col" size="sm">Update</Button> */}
+          {/* </div>      */}
         </div>
-        <div className="group-row">
-          <div className="col text">Shop created at</div>
-          <div className="col text">{moment(shop.createdAt.toDate()).calendar()}</div>
-          <div className="col"></div>
-          <div className="col" id="inp"></div>
-        </div>
-        <div className="group-row">
-          <div className="col text">Shop name</div>
-          <div className="col text">{shop.name}</div>
-          <Input onChange={this.handleChange} className="col input" value={this.state.name} name="name" id="name" type="text"  placeholder="type the new name to update"/>
-          <Button onClick={this.updateShopName} color="success" className="col" id="btn" size="sm">Update</Button>
-        </div>
-        <div className="group-row">
-          <div className="col text">Shop city</div>
-          <div className="col text">{shop.city}</div>
-          <Input onChange={this.handleChange} className="col input" value={this.state.city} name="city" id="city" type="text" placeholder="type the new city to update"/>
-          <Button onClick={this.updateShopCity} color="success" className="col" id="btn" size="sm">Update</Button>
-        </div>
-        <div className="group-row">
-          <div className="col text">Shop address</div>
-          <div className="col text">{shop.address}</div>
-          <Input onChange={this.handleChange} className="col input" value={this.state.address} name="address" id="address" type="text"  placeholder="type the new address to update"/>
-          <Button onClick={this.updateShopAddress} color="success" id="btn" className="col" size="sm">Update</Button>
-        </div>     
-        </>
       )
     } else {
       return (

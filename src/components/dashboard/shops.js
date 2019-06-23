@@ -7,12 +7,11 @@ import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 import './shops.scss';
 import AddShop from '../shops/addShop';
-import { getShops } from '../../store/actions/shopActions'
 
 class Shops extends Component {
   render() {
     const { shops, auth, notifications } = this.props;
-    console.log('rnd_this.props ', this.props);
+    //console.log('rnd_this.props ', this.props);
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="dashboard">

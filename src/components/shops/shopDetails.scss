@@ -1,9 +1,10 @@
-.detailsTitle {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin: 1%;
+.detailsPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 3.2%;
 }
+
 .input {
     margin: 1% 2%;
     padding: 0 1%;
@@ -28,8 +29,9 @@
 #btn {
     max-height: 32px;
     text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: normal;
+    font-size: 14px !important;
+    max-width: 25% !important;
 }
 
 @media screen and (max-width: 1000px) {
