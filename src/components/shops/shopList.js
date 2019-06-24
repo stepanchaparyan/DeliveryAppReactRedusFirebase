@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react';
 import { Table } from 'reactstrap';
 import './shopList.scss';
-import { connect } from 'react-redux'
-import { deleteShop } from '../../store/actions/shopActions'
+import { connect } from 'react-redux';
+import { deleteShop } from '../../store/actions/shopActions';
+import UpdateShop from './updateShop';
 import UpdateShopName from './updateShopName';
 import UpdateShopCity from './updateShopCity';
 import UpdateShopAddress from './updateShopAddress';
@@ -47,22 +48,24 @@ class ShopList extends Component {
                     <td>{shop.city}</td>
                     <td>{shop.address}</td>
                     <td id="x" onClick={() => this.props.deleteShop(shop.id)}>x</td>
-                    <td>
-                      <Button className="btnUpdate" color="secondary" id={i} onClick={this.toggle} style={{ marginBottom: '1rem' }}>Toggle</Button>
+                    <td id="tdButton">
+                      <Button className="btnUpdate" outline color="info" id={i} onClick={this.toggle}>Update</Button>
                     </td>
                   </tr>
                   { this.state.show && i==this.state.id ? 
                   <tr className="updateTR">
-                    <td className="firstTD"></td>
-                    <td>       
-                      <UpdateShopName isOpen={this.state.collapse} id={shop.id} />
+                    <td className="emptySpace"></td>
+                    <td>      
+                      <UpdateShop id={shop.id} data="name"/>
                     </td>
-                    <td>       
-                      <UpdateShopCity id={shop.id} />
+                    <td>
+                      <UpdateShop id={shop.id} data="city"/>
                     </td>                  
-                    <td>       
-                      <UpdateShopAddress id={shop.id} />
+                    <td>
+                      <UpdateShop id={shop.id} data="address"/>
                     </td>
+                    <td className="emptySpace"></td>
+                    <td className="emptySpace"></td>
                   </tr>  
                   : null }
                   </Fragment>

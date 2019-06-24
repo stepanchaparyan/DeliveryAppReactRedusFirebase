@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Input } from 'reactstrap';
-import './shopDetails.scss';
+import './updateShop.scss';
 import { Redirect } from 'react-router-dom';
 import { updateShopAddress } from '../../store/actions/shopActions'
 
@@ -32,7 +32,7 @@ class UpdateShopAddress extends Component {
       return (
         <div className="detailsPage">          
             <Input onChange={this.handleChange} className="col input" value={this.state.address} name="address" id="address" type="text" placeholder="new address"/>
-            <Button onClick={this.updateShopAddress} color="success" className="col" id="btn" size="sm">Update</Button>
+            <Button onClick={this.updateShopAddress} outline color="info" className="col" id="btn" size="sm">Update</Button>
         </div>
       )
     } else {

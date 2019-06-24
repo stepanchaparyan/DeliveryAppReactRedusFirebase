@@ -3,24 +3,28 @@ import { connect } from 'react-redux';
 import { Button, Input } from 'reactstrap';
 import './updateShop.scss';
 import { Redirect } from 'react-router-dom';
-import { updateShopName } from '../../store/actions/shopActions'
+import { updateShop } from '../../store/actions/shopActions'
 
-class UpdateShopName extends Component {
-  state = {
-    name: ''
+class UpdateShop extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      [props.data]: ''
+    }
   }
+  
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
 
-  updateShopName = (e) => {
+  updateShop = (e) => {
     e.preventDefault();
     const { shopId } = this.props;
-    this.props.updateShopName(this.state.name, shopId);
+    this.props.updateShop(this.props.data, this.state[this.props.data], shopId);
     this.setState({
-        name: ''
+      [this.props.data]: ''
     });
   }
 
@@ -31,8 +35,8 @@ class UpdateShopName extends Component {
   if (shop) {
       return (
         <div className="detailsPage">          
-            <Input onChange={this.handleChange} className="col input" value={this.state.name} name="name" id="name" type="text" placeholder="new name"/>
-            <Button onClick={this.updateShopName} outline color="info" className="col" id="btn" size="sm">Update</Button>
+            <Input onChange={this.handleChange} className="col input" value={this.state[this.props.data]} name={this.props.data} id={this.props.data} type="text" placeholder={this.props.data}/>
+            <Button onClick={this.updateShop} outline color="info" className="col" id="btn" size="sm">Update</Button>
         </div>
       )
     } else {
@@ -59,8 +63,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateShopName: (shopName, shopId) => dispatch(updateShopName(shopName, shopId)),
+    updateShop: (data, shopData, shopId) => dispatch(updateShop(data, shopData, shopId)),
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UpdateShopName)
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateShop)

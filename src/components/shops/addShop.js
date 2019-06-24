@@ -85,7 +85,8 @@ class AddShop extends Component {
                     onChange={this.handleChange}
                     />
         </FormGroup>
-        <Button outline color="success">Add</Button>
+        <FormGroup></FormGroup>
+        <Button outline color="info">Add</Button>
     </ValidationForm>
     )
   }

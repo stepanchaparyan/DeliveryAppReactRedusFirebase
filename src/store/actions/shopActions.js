@@ -35,6 +35,19 @@ export const addShop = (shop) => {
 //   }
 // };
 
+export const updateShop = (data, shopData, shopId) => {
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+    firestore.collection('shops').doc(shopId).update({
+      [data]: shopData  
+    }).then(() => {
+      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
+    }).catch(err => {
+      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
+    });
+  }
+};
+
 export const updateShopName = (shopName, shopId) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();

@@ -1,0 +1,14 @@
+.detailsPage {
+    display: flex;
+}
+#btn {
+    text-align: center;
+    font-size: 14px !important;
+    max-width: 25% !important;
+}
+
+@media only screen and (max-width: 1000px) {
+    #btn {
+        max-width: 80% !important;
+    }
+  }

@@ -17,6 +17,11 @@ class Shops extends Component {
       <div className="dashboard">
         <div className="shopListTitle">Shops list</div>
           <ShopList shops={shops}/>
+          <hr />
+          <hr />
+          <div className="shopListTitle">Add new Shop</div>
+          <hr />
+          <hr />
           <AddShop />
           <hr />
           <Notifications notifications={notifications} />   
