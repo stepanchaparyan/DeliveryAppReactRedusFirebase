@@ -11,10 +11,9 @@ import AddShop from '../shops/addShop';
 class Shops extends Component {
   render() {
     const { shops, auth, notifications } = this.props;
-    //console.log('rnd_this.props ', this.props);
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
-      <div className="dashboard">
+      <div className="shopPage">
         <div className="shopListTitle">Shops list</div>
           <ShopList shops={shops}/>
           <hr />

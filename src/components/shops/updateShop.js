@@ -36,7 +36,7 @@ class UpdateShop extends Component {
       return (
         <div className="detailsPage">          
             <Input onChange={this.handleChange} className="col input" value={this.state[this.props.data]} name={this.props.data} id={this.props.data} type="text" placeholder={this.props.data}/>
-            <Button onClick={this.updateShop} outline color="info" className="col" id="btn" size="sm">Update</Button>
+            <Button onClick={this.updateShop} outline color="info" className="col updatebtn" id="btn" size="sm">Update</Button>
         </div>
       )
     } else {

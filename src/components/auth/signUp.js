@@ -8,6 +8,7 @@ import validator from 'validator';
 import { FaEye } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 import { DebounceInput } from 'react-debounce-input';
+import { Button } from 'reactstrap';
 
 class SignUp extends Component {
   state = {
@@ -111,7 +112,7 @@ class SignUp extends Component {
                { authError ? <p>{authError}</p> : null }
            </div>
            <div className="form-group" id="btn">
-               <button className="btn btn-success btn-lg btn-block">Submit</button>
+                <Button className="btnSignIn" size="lg" block color="info">Submit</Button>
            </div>
        </ValidationForm>
        </div>

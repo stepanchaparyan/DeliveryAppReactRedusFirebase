@@ -1,11 +1,17 @@
 .dashboard {
-    background-color: #F6F6F6;
+    background-color: #dddddd;
     margin: 0 !important;
-    padding: 1% 10%;
+    padding: 1% 10% 10% 8%;
 }
-.text {
-    font-size: 20px;
+.mainText {
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
     margin: 1%;
+    color: #1a8596;
+}
+
+#BG {
+    width: 100%;
+    height: auto;
 }

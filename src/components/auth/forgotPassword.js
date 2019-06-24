@@ -7,6 +7,7 @@ import './auth.scss';
 import logo from '../../assets/logo.png';
 import SweetAlert from 'sweetalert2-react';
 import 'sweetalert2/dist/sweetalert2.css';
+import { Button } from 'reactstrap';
 
 class ForgotPasword extends Component {
     state = {
@@ -52,7 +53,7 @@ class ForgotPasword extends Component {
                     onConfirm={() => this.setState({ show: false })}
                 />
                 <div className="form-group" id="btn">
-                    <button className="btn btn-success btn-lg btn-block">Send</button>
+                    <Button className="btnSignIn" size="lg" block color="info">Submit</Button>
                 </div>
                 </ValidationForm>
           </div>

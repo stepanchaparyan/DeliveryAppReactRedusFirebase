@@ -1,13 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import { Table } from 'reactstrap';
+import { Table, Button } from 'reactstrap';
 import './shopList.scss';
 import { connect } from 'react-redux';
 import { deleteShop } from '../../store/actions/shopActions';
 import UpdateShop from './updateShop';
-import UpdateShopName from './updateShopName';
-import UpdateShopCity from './updateShopCity';
-import UpdateShopAddress from './updateShopAddress';
-import { Button } from 'reactstrap';
 
 class ShopList extends Component {
   constructor(props) {
