@@ -38,7 +38,7 @@ class AddProduct extends Component {
     <ValidationForm className="form" onSubmit={this.handleSubmit}  ref={this.formRef}>
         <FormGroup>
             <DebounceInput element={TextInput}
-                    debounceTimeout={500}
+                    debounceTimeout={300}
                     name="name"
                     id="name"
                     type="text"
@@ -55,7 +55,7 @@ class AddProduct extends Component {
         </FormGroup>
         <FormGroup>
             <DebounceInput element={TextInput}  
-                    debounceTimeout={500}
+                    debounceTimeout={300}
                     name="price"
                     id="price" 
                     type="number"                       
@@ -87,7 +87,7 @@ class AddProduct extends Component {
                     onChange={this.handleChange}
                     />
         </FormGroup>    
-        <Button outline color="success">Add</Button>
+        <Button outline color="info">Add</Button>
     </ValidationForm>
     )
   }

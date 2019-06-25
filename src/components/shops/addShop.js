@@ -55,7 +55,7 @@ class AddShop extends Component {
         </FormGroup>
         <FormGroup>
             <DebounceInput element={TextInput}  
-                    debounceTimeout={500}
+                    debounceTimeout={300}
                     name="city"
                     id="city" 
                     type="text"                       
@@ -72,7 +72,7 @@ class AddShop extends Component {
         </FormGroup>
         <FormGroup>
             <DebounceInput element={TextInput}
-                    debounceTimeout={500}
+                    debounceTimeout={300}
                     name="address"
                     type="text" 
                     id="address"

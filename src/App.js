@@ -7,7 +7,6 @@ import SignUp from './components/auth/signUp';
 import ForgotPassword from './components/auth/forgotPassword';
 import Shops from './components/dashboard/shops';
 import Products from './components/dashboard/products';
-import ProductDetails from './components/products/productDetails';
 
 class App extends Component {
   render() {
@@ -22,7 +21,6 @@ class App extends Component {
             <Route path='/forgotPassword' component={ForgotPassword} />
             <Route path='/shops' component={Shops} />
             <Route path='/products' component={Products} />
-            <Route path='/product/:id' component={ProductDetails} />
           </Switch>
         </div>
       </BrowserRouter>

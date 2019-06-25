@@ -17,23 +17,6 @@ export const addShop = (shop) => {
   }
 };
 
-// export const addShop = (shop) => {
-//   return (dispatch) => {
-//       dispatch({ type: 'ADD_SHOP_SUCCESS', data: shop });
-//   }
-// };
-
-// export const getShops = () => {
-//   return (dispatch, getState) => {
-//     const shops = getState().firestore.ordered.shops;
-//     console.log('getState ', getState());
-//     console.log('getSateFirestore.data.shops ', shops);
-//     //firestore.collection('shops').add({})
-//     //.then(() => {
-//       dispatch({ type: 'GET_SHOPS_SUCCESS', data: shops });
-//     //});
-//   }
-// };
 
 export const updateShop = (data, shopData, shopId) => {
   return (dispatch, getState, {getFirestore}) => {
@@ -42,45 +25,6 @@ export const updateShop = (data, shopData, shopId) => {
       [data]: shopData  
     }).then(() => {
       dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
-    }).catch(err => {
-      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
-    });
-  }
-};
-
-export const updateShopName = (shopName, shopId) => {
-  return (dispatch, getState, {getFirestore}) => {
-    const firestore = getFirestore();
-    firestore.collection('shops').doc(shopId).update({
-      name: shopName  
-    }).then(() => {
-      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
-    }).catch(err => {
-      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
-    });
-  }
-};
-
-export const updateShopCity = (shopCity, shopId) => {
-  return (dispatch, getState, {getFirestore}) => {
-    const firestore = getFirestore();
-    firestore.collection('shops').doc(shopId).update({
-      city: shopCity
-    }).then(() => {
-      dispatch({ type: 'UPDATE_SHOP_SUCCESS' });
-    }).catch(err => {
-      dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
-    });
-  }
-};
-
-export const updateShopAddress = (shopAddress, shopId) => {
-  return (dispatch, getState, {getFirestore}) => {
-    const firestore = getFirestore();
-    firestore.collection('shops').doc(shopId).update({
-      address: shopAddress
-    }).then(() => {
-      dispatch({ type: 'UPDATE_SHOP_SUCCESS',  });
     }).catch(err => {
       dispatch({ type: 'UPDATE_SHOP_ERROR' }, err);
     });

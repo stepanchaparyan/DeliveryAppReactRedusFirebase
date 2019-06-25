@@ -13,9 +13,14 @@ class Products extends Component {
     const { products, auth, notifications } = this.props;
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
-      <div className="dashboard">
+      <div className="productPage">
         <div className="productListTitle">Product list</div>
           <ProductList products={products} />
+          <hr />
+          <hr />
+          <div className="productListTitle">Add new Product</div>
+          <hr />
+          <hr />
           <AddProduct />
           <hr />
           <Notifications notifications={notifications} />   

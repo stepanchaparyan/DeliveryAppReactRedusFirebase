@@ -17,37 +17,11 @@ export const addProduct = (product) => {
   }
 };
 
-export const updateProductName = (productName, productId) => {
+export const updateProduct = (data, productData, productId) => {
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
     firestore.collection('products').doc(productId).update({
-      name: productName  
-    }).then(() => {
-      dispatch({ type: 'UPDATE_PRODUCT_SUCCESS' });
-    }).catch(err => {
-      dispatch({ type: 'UPDATE_PRODUCT_ERROR' }, err);
-    });
-  }
-};
-
-export const updateProductPrice = (productPrice, productId) => {
-  return (dispatch, getState, {getFirestore}) => {
-    const firestore = getFirestore();
-    firestore.collection('products').doc(productId).update({
-      price: productPrice
-    }).then(() => {
-      dispatch({ type: 'UPDATE_PRODUCT_SUCCESS' });
-    }).catch(err => {
-      dispatch({ type: 'UPDATE_PRODUCT_ERROR' }, err);
-    });
-  }
-};
-
-export const updateProductQuantity = (productQuantity, productId) => {
-  return (dispatch, getState, {getFirestore}) => {
-    const firestore = getFirestore();
-    firestore.collection('products').doc(productId).update({
-      quantity: productQuantity  
+      [data]: productData  
     }).then(() => {
       dispatch({ type: 'UPDATE_PRODUCT_SUCCESS' });
     }).catch(err => {
