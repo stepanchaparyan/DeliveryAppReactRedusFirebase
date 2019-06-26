@@ -18,7 +18,7 @@ class ProductList extends Component {
   toggle(e) {
     this.setState(({ 
       show: !this.state.show,
-      id: e.target.id  
+      id: Number(e.target.id)  
     }));
   }
 
@@ -39,7 +39,7 @@ class ProductList extends Component {
                 return (
                   <Fragment key={i}>
                   <tr key={i}>
-                    <td className="firstTD" scope="row">{i+1}</td>
+                    <td className="firstTD">{i+1}</td>
                     <td>{product.name}</td>             
                     <td>{product.price}</td>
                     <td>{product.quantity}</td>
@@ -48,7 +48,7 @@ class ProductList extends Component {
                       <Button className="btnUpdate" outline color="info" id={i} onClick={this.toggle}>Update</Button>
                     </td>
                   </tr>
-                  { this.state.show && i==this.state.id ? 
+                  { this.state.show && i===this.state.id ? 
                   <tr className="updateTR">
                     <td className="emptySpace"></td>
                     <td>      

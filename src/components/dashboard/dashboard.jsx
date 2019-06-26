@@ -11,7 +11,7 @@ class Dashboard extends Component {
     return (
       <div className="dashboard">
         <div className="mainText">This is the main page</div>
-        <img id="BG" src={BG} />
+        <img id="BG" src={BG} alt="justPhoto" />
       </div>
     )
   }
