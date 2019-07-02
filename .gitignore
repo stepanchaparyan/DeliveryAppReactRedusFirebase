@@ -65,4 +65,7 @@ node_modules/
 .env
 
 # build for firebase hosting
-dist/
+build/
+
+# package-lock.json
+package-lock.json
