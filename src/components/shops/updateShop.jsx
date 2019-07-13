@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Input } from 'reactstrap';
-import './updateShop.scss';
+import '../../stylesheets/updateShop.scss';
 import { Redirect } from 'react-router-dom';
 import { updateShop } from '../../store/actions/shopActions'
 

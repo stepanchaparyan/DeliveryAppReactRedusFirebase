@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import './notifications.scss';
+import '../../stylesheets/notifications.scss';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const Notifications = (props) => {

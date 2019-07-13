@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authActions'
 import { Nav, NavItem  } from 'reactstrap';
-import './navbar.scss';
+import '../../stylesheets/navbar.scss';
 
  const SignedInLinks = (props) => {
   return (

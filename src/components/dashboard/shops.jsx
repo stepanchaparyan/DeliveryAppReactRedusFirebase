@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
-import './shops.scss';
+import '../../stylesheets/shops.scss';
 import AddShop from '../shops/addShop';
 
 class Shops extends Component {

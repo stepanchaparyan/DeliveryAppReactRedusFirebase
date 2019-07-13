@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Nav, NavItem } from 'reactstrap';
-import './navbar.scss';
+import '../../stylesheets/navbar.scss';
 
 const SignedOutLinks = () => {
   return (

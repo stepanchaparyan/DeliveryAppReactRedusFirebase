@@ -3,7 +3,7 @@ import SignedInLinks from './signedInLinks'
 import SignedOutLinks from './signedOutLinks'
 import { connect } from 'react-redux'
 import { Container, Navbar, NavbarBrand } from 'reactstrap';
-import './navbar.scss';
+import '../../stylesheets/navbar.scss';
 import { FaTruck } from 'react-icons/fa';
 import {FormattedMessage} from 'react-intl';
 

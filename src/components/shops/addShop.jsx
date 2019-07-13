@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addShop } from '../../store/actions/shopActions'
 import { Button, FormGroup } from 'reactstrap';
-import './addShops.scss';
+import '../../stylesheets/addShops.scss';
 import { ValidationForm, TextInput } from 'react-bootstrap4-form-validation';
 import { DebounceInput } from 'react-debounce-input';
 

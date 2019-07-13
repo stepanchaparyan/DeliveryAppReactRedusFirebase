@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { resetPassword } from '../../store/actions/authActions';
 import { ValidationForm, TextInput } from 'react-bootstrap4-form-validation';
 import validator from 'validator';
-import './auth.scss';
+import '../../stylesheets/auth.scss';
 import logo from '../../assets/logo.png';
 import SweetAlert from 'sweetalert2-react';
 import 'sweetalert2/dist/sweetalert2.css';

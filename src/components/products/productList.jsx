@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Table, Button } from 'reactstrap';
-import './productList.scss';
+import '../../stylesheets/productList.scss';
 import { connect } from 'react-redux';
 import { deleteProduct } from '../../store/actions/productActions';
 import UpdateProduct from './updateProduct';

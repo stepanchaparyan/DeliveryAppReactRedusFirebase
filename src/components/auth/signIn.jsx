@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { signIn } from '../../store/actions/authActions'
 import { Redirect, Link } from 'react-router-dom'
-import './auth.scss'
+import '../../stylesheets/auth.scss'
 import { ValidationForm, TextInput, TextInputGroup } from 'react-bootstrap4-form-validation';
 import validator from 'validator';
 import { FaEye } from 'react-icons/fa';
