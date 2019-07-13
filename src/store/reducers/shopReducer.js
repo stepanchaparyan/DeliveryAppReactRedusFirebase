@@ -1,23 +1,8 @@
 const initState = {}
-  //  [
-  //   { 
-  //     name: 'nnn', 
-  //     city: 'ccc', 
-  //     address: 'aaaa'
-  //   }
-  // ]
 
 
 const shopReducer = (state = initState, action) => {
-  //let newState = { ...state };
   switch (action.type) {
-
-    // case 'GET_SHOPS_SUCCESS':
-    //   console.log('get_shop success', state);  
-    //   console.log('nnnnnnn', newState);
-    //   newState = { ...newState, ...action.data}
-    //   return newState;
-
 
     case 'ADD_SHOP_SUCCESS':
       console.log('add_shop success');
