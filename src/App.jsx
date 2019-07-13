@@ -5,8 +5,8 @@ import Dashboard from './components/dashboard/dashboard';
 import SignIn from './components/auth/signIn';
 import SignUp from './components/auth/signUp';
 import ForgotPassword from './components/auth/forgotPassword';
-import Shops from './components/dashboard/shops';
-import Products from './components/dashboard/products';
+import Shops from './components/shops/shops';
+import Products from './components/products/products';
 
 import messagesEN from './en.messages';
 import messagesHY from './hy.messages';
