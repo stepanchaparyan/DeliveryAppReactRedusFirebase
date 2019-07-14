@@ -15,13 +15,13 @@ class UpdateShop extends Component {
   }
 
   static propTypes = {
-    id: PropTypes.string,
-    data: PropTypes.string,
-    shopId: PropTypes.string,
-    updateShop: PropTypes.func,
-    shop: PropTypes.object,
+    id: PropTypes.string.isRequired,
+    data: PropTypes.string.isRequired,
+    shopId: PropTypes.string.isRequired,
+    updateShop: PropTypes.func.isRequired,
+    shop: PropTypes.object.isRequired,
     auth: PropTypes.shape({
-      uid: PropTypes.string
+      uid: PropTypes.string.isRequired
     }),
   }
   

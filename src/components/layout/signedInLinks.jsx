@@ -22,11 +22,11 @@ import PropTypes from 'prop-types';
 }
 
 SignedInLinks.propTypes = {
-  signOut: PropTypes.func,
-  changeLanguageToHY: PropTypes.func,
-  changeLanguageToEN: PropTypes.func,
+  signOut: PropTypes.func.isRequired,
+  changeLanguageToHY: PropTypes.func.isRequired,
+  changeLanguageToEN: PropTypes.func.isRequired,
   profile: PropTypes.shape({
-    firstName: PropTypes.string
+    firstName: PropTypes.string.isRequired
   }),
 };
 

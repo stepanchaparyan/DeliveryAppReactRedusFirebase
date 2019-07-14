@@ -15,7 +15,7 @@ class AddProduct extends Component {
   }
 
   static propTypes = {
-    addProduct: PropTypes.func
+    addProduct: PropTypes.func.isRequired
   };
 
   formRef = React.createRef();

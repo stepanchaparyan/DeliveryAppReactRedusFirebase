@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 class Dashboard extends Component {
   static propTypes = {
     auth: PropTypes.shape({
-      uid: PropTypes.string
+      uid: PropTypes.string.isRequired
     })
   };
 

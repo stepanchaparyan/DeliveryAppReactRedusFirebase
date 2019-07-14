@@ -16,7 +16,7 @@ class ForgotPasword extends Component {
     }    
     
     static propTypes = {
-        resetPassword: PropTypes.func
+        resetPassword: PropTypes.func.isRequired
     };
 
     handleChange = (e, value) => {

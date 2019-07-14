@@ -22,10 +22,10 @@ class SignUp extends Component {
 
   static propTypes = {
     auth: PropTypes.shape({
-      uid: PropTypes.string
+      uid: PropTypes.string.isRequired
     }),
     authError: PropTypes.any,
-    signUp: PropTypes.func
+    signUp: PropTypes.func.isRequired
   };
 
   handleChange = (e) => {

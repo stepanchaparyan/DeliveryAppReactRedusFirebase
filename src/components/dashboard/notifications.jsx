@@ -24,7 +24,7 @@ const Notifications = (props) => {
 }
 
 Notifications.propTypes = {
-  notifications: PropTypes.array
+  notifications: PropTypes.array.isRequired
 };
 
 export default Notifications

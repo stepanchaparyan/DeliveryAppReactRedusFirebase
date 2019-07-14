@@ -20,10 +20,10 @@ class SignIn extends Component {
   
   static propTypes = {
     auth: PropTypes.shape({
-      uid: PropTypes.string
+      uid: PropTypes.string.isRequired
     }),
     authError: PropTypes.any,
-    signIn: PropTypes.func
+    signIn: PropTypes.func.isRequired
   };
 
   handleChange = (e) => {

@@ -31,13 +31,13 @@ const MyNavbar = (props) => {
 
 MyNavbar.propTypes = {
   auth: PropTypes.shape({
-    uid: PropTypes.string
+    uid: PropTypes.string.isRequired
   }),
   profile: PropTypes.shape({
-    firstName: PropTypes.string
+    firstName: PropTypes.string.isRequired
   }),
-  changeLanguageToHY: PropTypes.func,
-  changeLanguageToEN: PropTypes.func
+  changeLanguageToHY: PropTypes.func.isRequired,
+  changeLanguageToEN: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {

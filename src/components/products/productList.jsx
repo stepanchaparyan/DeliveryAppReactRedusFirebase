@@ -17,8 +17,8 @@ class ProductList extends Component {
   }
 
   static propTypes = {
-    products: PropTypes.arrayOf(PropTypes.object),
-    deleteProduct: PropTypes.func
+    products: PropTypes.arrayOf(PropTypes.object).isRequired,
+    deleteProduct: PropTypes.func.isRequired
   }
   
   toggle(e) {

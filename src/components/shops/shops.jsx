@@ -13,10 +13,10 @@ import PropTypes from 'prop-types';
 class Shops extends Component {
   static propTypes = {
     auth: PropTypes.shape({
-      uid: PropTypes.string
+      uid: PropTypes.string.isRequired
     }),
-    notifications: PropTypes.arrayOf(PropTypes.object),
-    shops: PropTypes.arrayOf(PropTypes.object)
+    notifications: PropTypes.arrayOf(PropTypes.object).isRequired,
+    shops: PropTypes.arrayOf(PropTypes.object).isRequired
   };
 
   render() {

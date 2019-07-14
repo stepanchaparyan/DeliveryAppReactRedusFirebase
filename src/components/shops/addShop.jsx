@@ -16,7 +16,7 @@ class AddShop extends Component {
   formRef = React.createRef();
 
   static propTypes = {
-    addShop: PropTypes.func
+    addShop: PropTypes.func.isRequired
   };
 
   handleChange = (e) => {

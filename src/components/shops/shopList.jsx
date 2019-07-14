@@ -17,8 +17,8 @@ class ShopList extends Component {
   }
 
   static propTypes = {
-    shops: PropTypes.array,
-    deleteShop: PropTypes.func
+    shops: PropTypes.arrayOf(PropTypes.object).isRequired,
+    deleteShop: PropTypes.func.isRequired
   }
 
   toggle(e) {
