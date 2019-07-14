@@ -9,6 +9,7 @@ import { FaEye } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 import { DebounceInput } from 'react-debounce-input';
 import { Button } from 'reactstrap';
+import PropTypes from 'prop-types'; 
 
 class SignUp extends Component {
   state = {
@@ -18,6 +19,15 @@ class SignUp extends Component {
     lastName: '',
     type: 'password'
   }
+
+  static propTypes = {
+    auth: PropTypes.shape({
+      uid: PropTypes.string
+    }),
+    authError: PropTypes.any,
+    signUp: PropTypes.func
+  };
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value

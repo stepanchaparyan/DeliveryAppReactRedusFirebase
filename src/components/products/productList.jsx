@@ -4,6 +4,7 @@ import '../../stylesheets/productList.scss';
 import { connect } from 'react-redux';
 import { deleteProduct } from '../../store/actions/productActions';
 import UpdateProduct from './updateProduct';
+import PropTypes from 'prop-types';
 
 class ProductList extends Component {
   constructor(props) {
@@ -15,6 +16,11 @@ class ProductList extends Component {
     };
   }
 
+  static propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object),
+    deleteProduct: PropTypes.func
+  }
+  
   toggle(e) {
     this.setState(({ 
       show: !this.state.show,

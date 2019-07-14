@@ -4,6 +4,7 @@ import { Button, Input } from 'reactstrap';
 import '../../stylesheets/updateProduct.scss';
 import { Redirect } from 'react-router-dom';
 import { updateProduct } from '../../store/actions/productActions'
+import PropTypes from 'prop-types';
 
 class UpdateProduct extends Component {
   constructor(props) {
@@ -11,6 +12,17 @@ class UpdateProduct extends Component {
     this.state = {
       [props.data]: ''
     }
+  }
+
+  static propTypes = {
+    id: PropTypes.string,
+    data: PropTypes.string,
+    productId: PropTypes.string,
+    updateProduct: PropTypes.func,
+    product: PropTypes.object,
+    auth: PropTypes.shape({
+      uid: PropTypes.string
+    }),
   }
   
   handleChange = (e) => {

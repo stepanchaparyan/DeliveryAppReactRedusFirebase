@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authActions'
 import { Nav, NavItem  } from 'reactstrap';
 import '../../stylesheets/navbar.scss';
+import PropTypes from 'prop-types'; 
 
  const SignedInLinks = (props) => {
   return (
@@ -19,6 +20,15 @@ import '../../stylesheets/navbar.scss';
     </div>
   )
 }
+
+SignedInLinks.propTypes = {
+  signOut: PropTypes.func,
+  changeLanguageToHY: PropTypes.func,
+  changeLanguageToEN: PropTypes.func,
+  profile: PropTypes.shape({
+    firstName: PropTypes.string
+  }),
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import '../../stylesheets/notifications.scss';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import PropTypes from 'prop-types'; 
 
 const Notifications = (props) => {
   const { notifications } = props;
@@ -21,5 +22,9 @@ const Notifications = (props) => {
     </div>
   )
 }
+
+Notifications.propTypes = {
+  notifications: PropTypes.array
+};
 
 export default Notifications

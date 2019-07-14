@@ -5,6 +5,7 @@ import { Button, FormGroup } from 'reactstrap';
 import '../../stylesheets/addShops.scss';
 import { ValidationForm, TextInput } from 'react-bootstrap4-form-validation';
 import { DebounceInput } from 'react-debounce-input';
+import PropTypes from 'prop-types'; 
 
 class AddShop extends Component {
   state = {
@@ -13,6 +14,10 @@ class AddShop extends Component {
     address: ''
   }
   formRef = React.createRef();
+
+  static propTypes = {
+    addShop: PropTypes.func
+  };
 
   handleChange = (e) => {
     this.setState({

@@ -8,8 +8,17 @@ import { Redirect } from 'react-router-dom';
 import '../../stylesheets/products.scss';
 import AddProduct from './addProduct';
 import DocumentTitle from 'react-document-title';
+import PropTypes from 'prop-types'; 
 
 class Products extends Component {
+  static propTypes = {
+    auth: PropTypes.shape({
+      uid: PropTypes.string
+    }),
+    notifications: PropTypes.arrayOf(PropTypes.object),
+    products: PropTypes.arrayOf(PropTypes.object)
+  };
+  
   render() {
     const { products, auth, notifications } = this.props;
     if (!auth.uid) return <Redirect to='/signin' /> 

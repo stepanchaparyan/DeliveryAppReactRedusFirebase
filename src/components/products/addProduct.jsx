@@ -5,6 +5,7 @@ import { Button, FormGroup } from 'reactstrap';
 import '../../stylesheets/addProduct.scss';
 import { ValidationForm, TextInput } from 'react-bootstrap4-form-validation';
 import { DebounceInput } from 'react-debounce-input';
+import PropTypes from 'prop-types'; 
 
 class AddProduct extends Component {
   state = {
@@ -12,6 +13,11 @@ class AddProduct extends Component {
     price: '',
     quantity: ''
   }
+
+  static propTypes = {
+    addProduct: PropTypes.func
+  };
+
   formRef = React.createRef();
 
   handleChange = (e) => {

@@ -8,12 +8,17 @@ import logo from '../../assets/logo.png';
 import SweetAlert from 'sweetalert2-react';
 import 'sweetalert2/dist/sweetalert2.css';
 import { Button } from 'reactstrap';
+import PropTypes from 'prop-types'; 
 
 class ForgotPasword extends Component {
     state = {
         email: ''
     }    
     
+    static propTypes = {
+        resetPassword: PropTypes.func
+    };
+
     handleChange = (e, value) => {
         this.setState({
             [e.target.name]: e.target.value

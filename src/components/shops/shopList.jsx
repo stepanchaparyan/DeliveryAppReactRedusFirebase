@@ -4,6 +4,7 @@ import '../../stylesheets/shopList.scss';
 import { connect } from 'react-redux';
 import { deleteShop } from '../../store/actions/shopActions';
 import UpdateShop from './updateShop';
+import PropTypes from 'prop-types';
 
 class ShopList extends Component {
   constructor(props) {
@@ -13,6 +14,11 @@ class ShopList extends Component {
       show: false,
       id: ''
     };
+  }
+
+  static propTypes = {
+    shops: PropTypes.array,
+    deleteShop: PropTypes.func
   }
 
   toggle(e) {

@@ -9,6 +9,7 @@ import { FaEye } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 import { DebounceInput } from 'react-debounce-input';
 import { Button } from 'reactstrap';
+import PropTypes from 'prop-types'; 
 
 class SignIn extends Component {
   state = {
@@ -16,6 +17,15 @@ class SignIn extends Component {
     password: '',
     type: 'password'
   }
+  
+  static propTypes = {
+    auth: PropTypes.shape({
+      uid: PropTypes.string
+    }),
+    authError: PropTypes.any,
+    signIn: PropTypes.func
+  };
+
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
@@ -30,6 +40,7 @@ class SignIn extends Component {
   }
 
   render() {
+    console.log(this.props);
     const { authError, auth } = this.props;
     if (auth.uid) return <Redirect to='/' /> 
     return (
@@ -50,7 +61,7 @@ class SignIn extends Component {
                     validator={validator.isEmail}
                     errorMessage={{ validator: "Please enter a valid email" }}
                     value={this.state.email}
-                    onChange={this.handleChange}
+                    onChange={this.handleChange}                    
                 />
             </div>
             <div className="form-group">

@@ -3,8 +3,15 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import '../../stylesheets/dashboard.scss';
 import BG from '../../assets/bg2.jpg';
+import PropTypes from 'prop-types'; 
 
 class Dashboard extends Component {
+  static propTypes = {
+    auth: PropTypes.shape({
+      uid: PropTypes.string
+    })
+  };
+
   render() {
     const { auth } = this.props;
     if (!auth.uid) return <Redirect to='/signin' /> 
