@@ -62,6 +62,7 @@ class SignUp extends Component {
                    errorMessage={{ validator: "Please enter a valid email" }}
                    value={this.state.email}
                    onChange={this.handleChange}
+                   autoFocus
                />
            </div>
            <div className="form-group">
