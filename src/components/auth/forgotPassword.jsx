@@ -9,6 +9,7 @@ import SweetAlert from 'sweetalert2-react';
 import 'sweetalert2/dist/sweetalert2.css';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 class ForgotPasword extends Component {
     state = {
@@ -38,10 +39,10 @@ class ForgotPasword extends Component {
             <div className="logo">
                 <img src={logo} alt="Logo"/>
             </div>
-            <div className="title">Forgot password</div>            
+            <div className="title">{messages.forgotPassword}</div>            
             <ValidationForm onSubmit={this.sendEmail}>
                 <div className="form-group">
-                    <label className="lebel" htmlFor="email">Enter your email to reset password</label>
+                    <label className="lebel" htmlFor="email">{messages.enterYourEmail}</label>
                     <TextInput  name="email" 
                                 id="email" 
                                 type="email" 
@@ -59,7 +60,7 @@ class ForgotPasword extends Component {
                     onConfirm={() => this.setState({ show: false })}
                 />
                 <div className="form-group" id="btn">
-                    <Button className="btnSignIn" size="lg" block color="info">Submit</Button>
+                    <Button className="btnSignIn" size="lg" block color="info">{messages.submit}</Button>
                 </div>
                 </ValidationForm>
           </div>

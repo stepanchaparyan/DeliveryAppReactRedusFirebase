@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import '../../stylesheets/dashboard.scss';
 import BG from '../../assets/bg2.jpg';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 class Dashboard extends Component {
   static propTypes = {
@@ -17,7 +18,7 @@ class Dashboard extends Component {
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="dashboard">
-        <div className="mainText">This is the main page</div>
+        <div className="mainText">{messages.mainText}</div>
         <img id="BG" src={BG} alt="justPhoto" />
       </div>
     )
@@ -25,7 +26,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = (state) => {
-  //console.log(state);
   return {
     auth: state.firebase.auth,
   }

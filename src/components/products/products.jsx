@@ -9,6 +9,7 @@ import '../../stylesheets/products.scss';
 import AddProduct from './addProduct';
 import DocumentTitle from 'react-document-title';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 class Products extends Component {
   static propTypes = {
@@ -25,11 +26,11 @@ class Products extends Component {
     return (
       <DocumentTitle title='Delivery Products'>
         <div className="productPage">
-          <div className="productListTitle">Product list</div>
+          <div className="productListTitle">{messages.productsList}</div>
             <ProductList products={products} />
             <hr />
             <hr />
-            <div className="productListTitle">Add new Product</div>
+            <div className="productListTitle">{messages.addNewProduct}</div>
             <hr />
             <hr />
             <AddProduct />

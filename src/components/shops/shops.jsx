@@ -9,6 +9,7 @@ import '../../stylesheets/shops.scss';
 import AddShop from './addShop';
 import DocumentTitle from 'react-document-title';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 class Shops extends Component {
   static propTypes = {
@@ -25,11 +26,11 @@ class Shops extends Component {
     return (
       <DocumentTitle title='Delivery Shop'>
         <div className="shopPage">
-          <div className="shopListTitle">Shops list</div>
+          <div className="shopListTitle">{messages.shopsList}</div>
             <ShopList shops={shops}/>
             <hr />
             <hr />
-            <div className="shopListTitle">Add new Shop</div>
+            <div className="shopListTitle">{messages.addNewShop}</div>
             <hr />
             <hr />
             <AddShop />

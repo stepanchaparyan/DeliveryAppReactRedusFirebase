@@ -6,6 +6,7 @@ import '../../stylesheets/addProduct.scss';
 import { ValidationForm, TextInput } from 'react-bootstrap4-form-validation';
 import { DebounceInput } from 'react-debounce-input';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 class AddProduct extends Component {
   state = {
@@ -94,7 +95,7 @@ class AddProduct extends Component {
                     onChange={this.handleChange}
                     />
         </FormGroup>    
-        <Button outline color="info">Add</Button>
+        <Button outline color="info">{messages.add}</Button>
     </ValidationForm>
     )
   }

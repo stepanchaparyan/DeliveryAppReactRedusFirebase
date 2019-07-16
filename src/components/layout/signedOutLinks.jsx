@@ -4,6 +4,7 @@ import { Nav, NavItem } from 'reactstrap';
 import '../../stylesheets/navbar.scss';
 import PropTypes from 'prop-types'; 
 import {FormattedMessage} from 'react-intl';
+import messages from '../../en.messages';
 
 const SignedOutLinks = (props) => {
   return (
@@ -22,8 +23,8 @@ const SignedOutLinks = (props) => {
                   defaultMessage='Log In'
               />
             </NavLink>
-            <button id='btnLang' onClick={props.changeLanguageToHY}>Arm</button>
-            <button id='btnLang' onClick={props.changeLanguageToEN}>Eng</button> 
+            <button id='btnLang' onClick={props.changeLanguageToHY}>{messages.arm}</button>
+            <button id='btnLang' onClick={props.changeLanguageToEN}>{messages.eng}</button> 
         </NavItem>
       </Nav>
     </div>

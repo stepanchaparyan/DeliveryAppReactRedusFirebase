@@ -6,6 +6,7 @@ import { Nav, NavItem  } from 'reactstrap';
 import '../../stylesheets/navbar.scss';
 import PropTypes from 'prop-types'; 
 import {FormattedMessage} from 'react-intl';
+import messages from '../../en.messages';
 
  const SignedInLinks = (props) => {
   return (
@@ -30,8 +31,8 @@ import {FormattedMessage} from 'react-intl';
           />
         </NavItem>
         <NavLink exact to='/' className="text-white nav-text profileName">{props.profile.firstName}</NavLink>
-        <button id='btnLang' onClick={props.changeLanguageToHY}>Arm</button>
-        <button id='btnLang' onClick={props.changeLanguageToEN}>Eng</button>  
+        <button id='btnLang' onClick={props.changeLanguageToHY}>{messages.arm}</button>
+        <button id='btnLang' onClick={props.changeLanguageToEN}>{messages.eng}</button>  
       </Nav>
     </div>
   )

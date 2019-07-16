@@ -6,6 +6,7 @@ import '../../stylesheets/addShops.scss';
 import { ValidationForm, TextInput } from 'react-bootstrap4-form-validation';
 import { DebounceInput } from 'react-debounce-input';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 class AddShop extends Component {
   state = {
@@ -92,7 +93,7 @@ class AddShop extends Component {
                     />
         </FormGroup>
         <FormGroup></FormGroup>
-        <Button outline color="info">Add</Button>
+        <Button outline color="info">{messages.add}</Button>
     </ValidationForm>
     )
   }

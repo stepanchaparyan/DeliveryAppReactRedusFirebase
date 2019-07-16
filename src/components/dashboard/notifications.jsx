@@ -3,12 +3,13 @@ import moment from 'moment';
 import '../../stylesheets/notifications.scss';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import PropTypes from 'prop-types'; 
+import messages from '../../en.messages';
 
 const Notifications = (props) => {
   const { notifications } = props;
   return (
     <div className="notifications">
-          <div className="notificationTitle">Notifications</div>
+          <div className="notificationTitle">{messages.notifications}</div>
           <ListGroup>
               { notifications && notifications.map(item =>{
                 return <ListGroupItem className="notifications" key={item.id}>

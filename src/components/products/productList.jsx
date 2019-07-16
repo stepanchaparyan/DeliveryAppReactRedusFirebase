@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { deleteProduct } from '../../store/actions/productActions';
 import UpdateProduct from './updateProduct';
 import PropTypes from 'prop-types';
+import messages from '../../en.messages';
 
 class ProductList extends Component {
   constructor(props) {
@@ -35,9 +36,9 @@ class ProductList extends Component {
           <thead>
             <tr>
                 <th className="firstTD">#</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th> 
+                <th>{messages.name}</th>
+                <th>{messages.price}</th>
+                <th>{messages.quantity}</th> 
             </tr>
           </thead>
           <tbody> 
@@ -51,7 +52,7 @@ class ProductList extends Component {
                     <td>{product.quantity}</td>
                     <td id="x" onClick={() => this.props.deleteProduct(product.id)}>x</td>
                     <td id="tdButton">
-                      <Button className="btnUpdate" outline color="info" id={i} onClick={this.toggle}>Update</Button>
+                      <Button className="btnUpdate" outline color="info" id={i} onClick={this.toggle}>{messages.update}</Button>
                     </td>
                   </tr>
                   { this.state.show && i===this.state.id ? 

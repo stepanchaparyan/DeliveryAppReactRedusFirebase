@@ -21,8 +21,20 @@ module.exports = {
     login: 'Log In',
     signout: 'Sign Out',
 
+    arm: 'Arm',
+    eng: 'Eng',
 
+    forgotPassword: 'Forgot password',
+    enterYourEmail: 'Enter your email to reset password',
+    submit: 'Submit',
+    email: 'Email',
+    password: 'Password',
+    forgotPassword: 'Forgot Password?', 
+    lastName: 'Last Name',
+    firstName: 'First Name',
 
+    mainText: 'This is the main text',
+    notifications: 'Notifications',
 
     shopsPage:{
         title: 'Shops list',

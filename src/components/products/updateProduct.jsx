@@ -5,6 +5,7 @@ import '../../stylesheets/updateProduct.scss';
 import { Redirect } from 'react-router-dom';
 import { updateProduct } from '../../store/actions/productActions'
 import PropTypes from 'prop-types';
+import messages from '../../en.messages';
 
 class UpdateProduct extends Component {
   constructor(props) {
@@ -48,13 +49,13 @@ class UpdateProduct extends Component {
       return (
         <div className="detailsPage">          
             <Input onChange={this.handleChange} className="col input" value={this.state[this.props.data]} name={this.props.data} id={this.props.data} type="text" placeholder={this.props.data}/>
-            <Button onClick={this.updateProduct} outline color="info" className="col updatebtn" id="btn" size="sm">Update</Button>
+            <Button onClick={this.updateProduct} outline color="info" className="col updatebtn" id="btn" size="sm">{messages.update}</Button>
         </div>
       )
     } else {
       return (
         <div className="container center">
-          <p>Loading project...</p>
+          <p>{messages.loadingProject}</p>
         </div>
       )
     }
