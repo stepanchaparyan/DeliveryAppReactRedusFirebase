@@ -34,11 +34,13 @@ class ProductList extends Component {
     return ( 
         <Table striped>
           <thead>
-            <tr>
-                <th className="firstTD">#</th>
-                <th>{messages.name}</th>
-                <th>{messages.price}</th>
-                <th>{messages.quantity}</th> 
+            <tr id='headtr'>
+              <th className="firstTD">#</th>
+              <th>{messages.name}</th>
+              <th>{messages.price}</th>
+              <th>{messages.quantity}</th> 
+              <th> </th>
+              <th> </th>
             </tr>
           </thead>
           <tbody> 
