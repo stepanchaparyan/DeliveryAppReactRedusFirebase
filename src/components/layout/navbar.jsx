@@ -10,7 +10,8 @@ import PropTypes from 'prop-types';
 
 const MyNavbar = (props) => {
   const { auth, profile, changeLanguageToHY, changeLanguageToEN } = props;
-  const links = auth.uid ? <SignedInLinks profile={profile} changeLanguageToHY={changeLanguageToHY} changeLanguageToEN={changeLanguageToEN}/> : <SignedOutLinks />;
+  const links = auth.uid ? <SignedInLinks profile={profile} changeLanguageToHY={changeLanguageToHY} changeLanguageToEN={changeLanguageToEN}/>
+                         : <SignedOutLinks changeLanguageToHY={changeLanguageToHY} changeLanguageToEN={changeLanguageToEN}/>;
     return (
       <Navbar className="p-2 bg-info text-white" light expand="md">
         <Container>

@@ -1,14 +1,33 @@
 module.exports = {
-    projectTitle: 'DeliveryApp',
+    projectTitle: 'Delivery App',
     shops: 'Shops',
+    name: 'Name',
+    city: 'City',
+    address: 'Address',
+    shopsList: 'Shops list',
+    addNewShop: 'Add new shop',
+
     products: 'Products',
+    productsList: 'Products list',
+    addNewProduct: 'Add new product',
+    price: 'Price',
+    quantity: 'Quantity',
+
+    update: 'Update',
+    add: 'Add',
+    loadingProject: 'Loading project ...',
+
+    signup: 'Sign Up',
+    login: 'Log In',
+    signout: 'Sign Out',
+
+
+
 
     shopsPage:{
         title: 'Shops list',
         addNewShop: 'addNewShop',
     },
-
-
 
     user: {
         create: {
